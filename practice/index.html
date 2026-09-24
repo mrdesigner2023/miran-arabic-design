@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2e9">
+  <meta name="description" content="رفيق عربي عملي من ثلاث محطات للمبتدئين في Adobe Illustrator: افهم البرنامج، جهّز مساحة العمل، وابدأ بفكرة من صنعك.">
+  <title>مسار إليستريتور للمبتدئين — رفيق تدريب عملي</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f2e9; --paper-deep: #ece5d8; --ink: #202622; --muted: #5c665f;
+      --line: #d5d2c8; --coral: #ba4b36; --coral-dark: #8c3527; --mint: #d9e5d9;
+      --blue: #244e61; --white: #fffdf8; --focus: #176b88; --radius: 18px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Arial, sans-serif;
+      font-synthesis: none; text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.75; font-size: 16px; }
+    a { color: inherit; }
+    a:focus-visible, button:focus-visible, input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 3px; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin-inline: auto; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 76px; border-bottom: 1px solid var(--line); }
+    .wordmark { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50% 50% 50% 12px; background: var(--coral); color: white; font-size: 18px; font-weight: 800; line-height: 1; transform: rotate(-6deg); }
+    .wordmark-name { display: block; font-size: 15px; font-weight: 800; line-height: 1.2; }
+    .wordmark-sub { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; letter-spacing: .04em; }
+    .header-side { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: 13px; }
+    .header-side a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); align-items: center; gap: clamp(36px, 7vw, 88px); padding-block: clamp(52px, 8vw, 100px) 58px; }
+    .eyebrow, .kicker { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 16px; color: var(--coral-dark); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--coral); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 670px; margin-bottom: 18px; font-size: clamp(38px, 5.7vw, 66px); font-weight: 800; line-height: 1.16; letter-spacing: -.045em; }
+    h1 em { color: var(--coral); font-style: normal; }
+    .hero-copy > p { max-width: 590px; margin-bottom: 26px; color: var(--muted); font-size: 17px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; gap: 11px; min-height: 48px; padding: 10px 19px; border: 1px solid var(--coral); border-radius: 999px; background: var(--coral); color: #fff; font-weight: 750; text-decoration: none; transition: background-color .16s ease, transform .16s ease; }
+    .button:hover { background: var(--coral-dark); transform: translateY(-1px); }
+    .button.secondary { border-color: var(--line); background: transparent; color: var(--ink); }
+    .button.secondary:hover { background: var(--white); }
+    .button svg { width: 17px; height: 17px; }
+    .hero-note { margin: 16px 0 0; color: var(--muted); font-size: 12px; }
+    .hero-art { position: relative; min-height: 370px; overflow: hidden; border-radius: 48% 48% 20px 20px; background: var(--mint); isolation: isolate; }
+    .hero-art::before, .hero-art::after { position: absolute; z-index: -1; content: ""; border-radius: 50%; }
+    .hero-art::before { width: 280px; height: 280px; inset: 22px auto auto 5%; border: 1px solid #8fa99b; }
+    .hero-art::after { width: 210px; height: 210px; inset: auto 4% 16px auto; border: 1px solid #8fa99b; }
+    .hero-art svg { position: absolute; width: 100%; height: 100%; inset: 0; }
+    .art-caption { position: absolute; inset: auto 20px 20px auto; display: flex; align-items: center; gap: 10px; max-width: 245px; padding: 12px 15px; border: 1px solid rgba(32,38,34,.12); border-radius: 13px; background: var(--white); box-shadow: 0 7px 24px rgba(30,43,36,.08); font-size: 12px; font-weight: 750; line-height: 1.55; }
+    .art-caption span:first-child { display: grid; flex: 0 0 31px; place-items: center; height: 31px; border-radius: 50%; background: #f5dfcb; color: var(--coral-dark); font-size: 17px; }
+    .start-here { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 18px; margin-block: 0 72px; padding: 20px 23px; border-block: 1px solid var(--line); }
+    .start-number { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 50%; background: var(--ink); color: white; font-size: 14px; font-weight: 800; }
+    .start-here h2 { margin: 0 0 2px; font-size: 17px; }
+    .start-here p { margin: 0; color: var(--muted); font-size: 13px; }
+    .start-here a { color: var(--coral-dark); font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
+    .section-head { display: grid; grid-template-columns: 1fr minmax(245px, .55fr); align-items: end; gap: 30px; margin-bottom: 27px; }
+    .section-head .kicker { margin-bottom: 8px; }
+    .section-head h2 { margin-bottom: 0; font-size: clamp(27px, 3.6vw, 41px); line-height: 1.25; letter-spacing: -.03em; }
+    .section-head > p { margin: 0; color: var(--muted); font-size: 14px; }
+    .progress-area { margin-bottom: 36px; padding: 17px 0 20px; border-bottom: 1px solid var(--line); }
+    .progress-top { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 9px; font-size: 13px; }
+    .progress-top strong { font-size: 13px; }
+    .progress-top span { color: var(--muted); }
+    .progress-track { height: 7px; overflow: hidden; border-radius: 99px; background: var(--paper-deep); }
+    .progress-value { display: block; width: 0; height: 100%; border-radius: inherit; background: var(--coral); transition: width .25s ease; }
+    .lessons { display: grid; gap: 25px; }
+    .lesson { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 20px; padding: 27px clamp(18px, 4vw, 42px) 32px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,253,248,.57); }
+    .lesson-marker { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .lesson-number { display: grid; place-items: center; width: 47px; height: 47px; border: 1px solid var(--coral); border-radius: 50%; color: var(--coral-dark); font-size: 18px; font-weight: 800; }
+    .lesson-marker small { color: var(--muted); font-size: 10px; writing-mode: vertical-rl; letter-spacing: .06em; }
+    .lesson-content { min-width: 0; }
+    .lesson-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0 0 6px; color: var(--muted); font-size: 12px; }
+    .lesson-meta .tag { color: var(--coral-dark); font-weight: 800; }
+    .lesson h3 { margin-bottom: 8px; font-size: clamp(21px, 2.6vw, 29px); line-height: 1.45; letter-spacing: -.025em; }
+    .lesson-goal { max-width: 750px; margin-bottom: 17px; color: var(--muted); }
+    .video-link { display: inline-flex; align-items: center; gap: 9px; color: var(--coral-dark); font-size: 14px; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .video-link svg { width: 18px; height: 18px; flex: none; }
+    .lesson-divider { height: 1px; margin-block: 22px; background: var(--line); }
+    .lesson-columns { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(22px, 5vw, 54px); }
+    .subhead { display: flex; align-items: center; gap: 9px; margin: 0 0 10px; font-size: 14px; font-weight: 800; }
+    .subhead .mini-icon { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: var(--paper-deep); color: var(--blue); font-size: 13px; }
+    .checklist { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+    .checklist label { display: flex; align-items: flex-start; gap: 9px; cursor: pointer; font-size: 13px; line-height: 1.6; }
+    .checklist input { width: 17px; height: 17px; flex: none; margin: 3px 0 0; accent-color: var(--coral); }
+    .checklist input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .exercise-copy { margin: 0; font-size: 14px; }
+    .exercise-tip { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+    .reference-links { display: flex; flex-wrap: wrap; gap: 7px 13px; margin-top: 12px; }
+    .reference-links a { color: var(--blue); font-size: 12px; font-weight: 750; text-underline-offset: 3px; }
+    .self-check { margin-top: 25px; padding-top: 19px; border-top: 1px dashed var(--line); }
+    .self-check legend { padding: 0 0 7px; font-size: 14px; font-weight: 800; }
+    .question { margin: 0 0 11px; font-size: 13px; }
+    .answers { display: grid; gap: 8px; }
+    .answer-option { display: flex; align-items: flex-start; gap: 9px; cursor: pointer; font-size: 13px; line-height: 1.55; }
+    .answer-option input { width: 16px; height: 16px; flex: none; margin: 4px 0 0; accent-color: var(--coral); }
+    .quiz-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
+    .quiz-button { min-height: 40px; padding: 7px 16px; border: 0; border-radius: 999px; background: var(--ink); color: white; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+    .quiz-button:hover { background: var(--blue); }
+    .quiz-feedback { min-height: 1.7em; margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+    .quiz-feedback.success { color: #275e3a; font-weight: 750; }
+    .quiz-feedback.error { color: var(--coral-dark); }
+    .next-link { display: inline-flex; align-items: center; gap: 7px; color: var(--coral-dark); font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .next-practice { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; margin-block: 54px 60px; padding: 28px clamp(20px, 4vw, 38px); border-radius: var(--radius); background: var(--ink); color: white; }
+    .next-practice .kicker { margin-bottom: 7px; color: #f0ac8e; }
+    .next-practice h2 { margin-bottom: 6px; font-size: clamp(21px, 3vw, 30px); }
+    .next-practice p { max-width: 650px; margin: 0; color: #d5d9d3; font-size: 13px; }
+    .next-practice .button { border-color: #f2b39a; background: transparent; color: white; white-space: nowrap; }
+    .next-practice .button:hover { background: rgba(255,255,255,.1); }
+    .editorial-note { display: grid; grid-template-columns: 24px 1fr; gap: 12px; margin-bottom: 36px; padding: 16px 18px; border-inline-start: 3px solid var(--blue); background: #e8ede7; }
+    .editorial-note .note-icon { display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid var(--blue); border-radius: 50%; color: var(--blue); font-size: 12px; font-weight: 800; }
+    .editorial-note p { margin: 0; color: #394b4a; font-size: 12px; }
+    .site-footer { display: flex; justify-content: space-between; gap: 18px; padding-block: 19px 27px; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; }
+    .site-footer p { margin: 0; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 600px); }
+      .site-header { min-height: 66px; }
+      .header-side { gap: 13px; font-size: 12px; }
+      .header-side .quiet-link { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 30px; padding-block: 48px 36px; }
+      .hero-copy { order: 0; }
+      .hero-art { order: 1; min-height: 250px; border-radius: 125px 125px 18px 18px; }
+      .hero-art::before { width: 195px; height: 195px; }
+      .hero-art::after { width: 150px; height: 150px; }
+      .start-here { grid-template-columns: auto 1fr; gap: 12px; margin-bottom: 54px; padding: 17px 0; }
+      .start-here a { grid-column: 2; }
+      .section-head { grid-template-columns: 1fr; gap: 10px; }
+      .lesson { grid-template-columns: 39px minmax(0,1fr); gap: 12px; padding: 20px 14px 23px; }
+      .lesson-number { width: 37px; height: 37px; font-size: 15px; }
+      .lesson-marker small { font-size: 9px; }
+      .lesson-columns { grid-template-columns: 1fr; gap: 19px; }
+      .next-practice { grid-template-columns: 1fr; gap: 17px; }
+      .next-practice .button { justify-self: start; }
+      .site-footer { flex-direction: column; gap: 5px; }
+    }
+    @media (max-width: 390px) {
+      body { font-size: 15px; }
+      .wrap { width: calc(100% - 24px); }
+      .header-side { font-size: 11px; }
+      .wordmark-sub { font-size: 10px; }
+      .hero-actions { align-items: stretch; flex-direction: column; }
+      .hero-actions .button { width: 100%; }
+      .hero-art { min-height: 220px; }
+      .lesson { grid-template-columns: 30px minmax(0,1fr); gap: 9px; padding-inline: 11px; }
+      .lesson-number { width: 30px; height: 30px; font-size: 13px; }
+      .lesson-marker small { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header wrap" id="top">
+    <a class="wordmark" href="#top" aria-label="مسار إليستريتور، بداية الصفحة">
+      <span class="mark" aria-hidden="true">م</span>
+      <span><span class="wordmark-name">خيط تعلّم</span><span class="wordmark-sub">رفيق ممارسة إبداعية</span></span>
+    </a>
+    <div class="header-side"><a class="quiet-link" href="#path">المسار</a><a href="#next-practice">بعد الدروس</a><span aria-label="ثلاث محطات">٠١ — ٠٣</span></div>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">مسار للمبتدئ · ابدأ من هنا</p>
+        <h1 id="hero-title">من أول تعرّف، إلى <em>فكرة</em> تصنعها بنفسك</h1>
+        <p>ثلاث محطات قصيرة ترافقك من فهم Illustrator إلى تهيئة مساحة العمل ثم تحويل الإلهام إلى تجربة تصميم أولى. شاهد الدرس، جرّب بيدك، وأجب عن سؤال التحقّق لتعرف خطوتك التالية.</p>
+        <div class="hero-actions">
+          <a class="button" href="#intro">ابدأ بالمقدمة <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5M7.5 10h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="button secondary" href="#path">تصفّح المحطات</a>
+        </div>
+        <p class="hero-note">لا تحتاج إلى خبرة سابقة. ابدأ بالمحطة الأولى واتبع الترتيب.</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M80 305c29-104 99-180 189-190 71-8 124 43 132 112 6 55-27 103-73 119-41 14-87-4-100-43-12-34 5-72 39-83 24-8 47 3 54 23" stroke="#244e61" stroke-width="2" stroke-linecap="round"/>
+          <path d="M120 318 218 85l93 232-191 1Z" stroke="#ba4b36" stroke-width="2"/>
+          <path d="m218 85 21 191 72 41M120 318l119-42" stroke="#ba4b36" stroke-width="1.5"/>
+          <circle cx="218" cy="85" r="7" fill="#ba4b36"/><circle cx="120" cy="318" r="7" fill="#ba4b36"/><circle cx="311" cy="317" r="7" fill="#ba4b36"/>
+          <circle cx="360" cy="111" r="25" fill="#f3c58f"/><circle cx="360" cy="111" r="8" fill="#ba4b36"/>
+          <path d="M81 123h69M115 89v68M385 249h54M412 222v54" stroke="#617f73" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M355 337c19-19 38-19 57 0-19 19-38 19-57 0Z" fill="#d98c61"/><path d="M376 322v30" stroke="#8c3527" stroke-width="1.5"/>
+        </svg>
+        <div class="art-caption"><span>✳</span><span>شاهِد الفكرة، ثم غيّرها بالتجربة. التعلّم يبدأ من يدك.</span></div>
+      </div>
+    </section>
+
+    <aside class="start-here wrap" aria-label="طريقة البدء">
+      <span class="start-number">١</span>
+      <div><h2>البداية المناسبة: مقدمة Illustrator</h2><p>تعرّف أولًا على البرنامج، ثم انتقل إلى إعداد مساحة العمل، وبعدها جرّب بناء فكرة خاصة بك.</p></div>
+      <a href="#intro">اذهب إلى درس البداية ←</a>
+    </aside>
+
+    <section class="wrap" id="path" aria-labelledby="path-title">
+      <div class="section-head">
+        <div><p class="kicker">ثلاث محطات عملية</p><h2 id="path-title">تعلّم قليلًا، وطبّق مباشرة</h2></div>
+        <p>رتّبت الدروس لتسير من التعريف بالبرنامج إلى بيئة العمل، ثم إلى تمرين يفتح باب الأفكار. لكل محطة فيديو وتمرين وسؤال مراجعة.</p>
+      </div>
+      <div class="progress-area" aria-label="تقدمك في المسار">
+        <div class="progress-top"><strong>تقدّم هذا الجهاز</strong><span id="progress-label" aria-live="polite">أنجزت ٠ من ٣ محطات</span></div>
+        <div class="progress-track" role="progressbar" aria-label="محطات المسار المكتملة" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0" id="progress-bar"><span class="progress-value" id="progress-value"></span></div>
+      </div>
+
+      <div class="lessons">
+        <article class="lesson" id="intro" data-lesson="intro" aria-labelledby="intro-title">
+          <div class="lesson-marker"><span class="lesson-number">١</span><small>افهم الأداة</small></div>
+          <div class="lesson-content">
+            <div class="lesson-meta"><span class="tag">المحطة الأولى</span><span>مقدمة · ٢:٤٣</span></div>
+            <h3 id="intro-title">ما هو Adobe Illustrator؟</h3>
+            <p class="lesson-goal">هدفك: كوّن صورة أولية عن البرنامج واستخدامه، ثم جرّب بنفسك كيف تبني رسمة بسيطة من أشكال واضحة.</p>
+            <a class="video-link" href="https://www.youtube.com/watch?v=eEK6CLdgov4" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="m8 6.6 5.2 3.4L8 13.4V6.6Z" fill="currentColor"/></svg>شاهد درس المقدمة على YouTube <span aria-hidden="true">↗</span></a>
+            <div class="lesson-divider"></div>
+            <div class="lesson-columns">
+              <section aria-labelledby="intro-checklist-title"><h4 class="subhead" id="intro-checklist-title"><span class="mini-icon" aria-hidden="true">✓</span>قائمة صغيرة قبل المتابعة</h4><ul class="checklist" data-checklist="intro">
+                <li><label><input type="checkbox" data-item="1"><span>أشاهد درس المقدمة أو أراجع فكرته.</span></label></li>
+                <li><label><input type="checkbox" data-item="2"><span>أذكر مثالًا لشيء أودّ تصميمه بالبرنامج.</span></label></li>
+                <li><label><input type="checkbox" data-item="3"><span>أجرّب شكلًا بسيطًا وأغيّر حجمه على مساحة الرسم.</span></label></li>
+              </ul></section>
+              <section aria-labelledby="intro-exercise-title"><h4 class="subhead" id="intro-exercise-title"><span class="mini-icon" aria-hidden="true">✳</span>تجربة عملية · رمز من شكلين</h4><p class="exercise-copy">افتح مستندًا جديدًا، واصنع رمزًا بسيطًا من دائرتين أو مستطيلين. جرّب تكبيره وتصغيره، ثم احفظه باسم «أول تجربة».</p><p class="exercise-tip">لا تبحث عن نتيجة مثالية؛ المطلوب أن تتعرّف على مساحة الرسم وتبدأ بالتحريك والتعديل.</p></section>
+            </div>
+            <form class="self-check" data-answer="1" data-success="إجابة موفقة. المحطة التالية: هيّئ مساحة عمل تناسبك." data-next-label="انتقل إلى إعداد مساحة العمل" data-next="#workspace">
+              <fieldset><legend>تحقّق بنفسك</legend><p class="question">أي عبارة تلخّص فكرة هذا المسار عن Illustrator؟</p><div class="answers">
+                <label class="answer-option"><input type="radio" name="intro-answer" value="0"><span>أداة لكتابة المستندات النصية فقط.</span></label>
+                <label class="answer-option"><input type="radio" name="intro-answer" value="1"><span>بيئة لصنع رسومات وأشكال يمكن تعديلها وبناء فكرة بصرية فيها.</span></label>
+                <label class="answer-option"><input type="radio" name="intro-answer" value="2"><span>مكتبة جاهزة من تصاميم لا يمكن تغييرها.</span></label>
+              </div></fieldset>
+              <div class="quiz-actions"><button class="quiz-button" type="submit">تحقّق وتابع</button></div><p class="quiz-feedback" aria-live="polite"></p><a class="next-link" href="#workspace" hidden></a>
+            </form>
+          </div>
+        </article>
+
+        <article class="lesson" id="workspace" data-lesson="workspace" aria-labelledby="workspace-title">
+          <div class="lesson-marker"><span class="lesson-number">٢</span><small>رتّب أدواتك</small></div>
+          <div class="lesson-content">
+            <div class="lesson-meta"><span class="tag">المحطة الثانية</span><span>مساحات العمل · ١١:١٥</span></div>
+            <h3 id="workspace-title">هيّئ مساحة عمل مريحة في Illustrator</h3>
+            <p class="lesson-goal">هدفك: تتعرّف إلى خيارات مساحة العمل وكيفية التحكم بترتيبها، ثم تختار ترتيبًا يساعدك على التركيز في مشروع صغير.</p>
+            <a class="video-link" href="https://www.youtube.com/watch?v=Y2wwGQ0gKqY" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="m8 6.6 5.2 3.4L8 13.4V6.6Z" fill="currentColor"/></svg>شاهد درس مساحات العمل على YouTube <span aria-hidden="true">↗</span></a>
+            <div class="lesson-divider"></div>
+            <div class="lesson-columns">
+              <section aria-labelledby="workspace-checklist-title"><h4 class="subhead" id="workspace-checklist-title"><span class="mini-icon" aria-hidden="true">✓</span>قائمة صغيرة قبل المتابعة</h4><ul class="checklist" data-checklist="workspace">
+                <li><label><input type="checkbox" data-item="1"><span>ألاحظ اللوحات والأدوات التي أحتاجها في تمريني.</span></label></li>
+                <li><label><input type="checkbox" data-item="2"><span>أرتّب مساحة الرسم بحيث تبقى مريحة وواضحة.</span></label></li>
+                <li><label><input type="checkbox" data-item="3"><span>أحفظ ترتيبًا يناسبني إن كان ذلك متاحًا في إصداري.</span></label></li>
+              </ul></section>
+              <section aria-labelledby="workspace-exercise-title"><h4 class="subhead" id="workspace-exercise-title"><span class="mini-icon" aria-hidden="true">✳</span>تجربة عملية · مساحة لمهمتك</h4><p class="exercise-copy">اختر مهمة بسيطة، مثل صنع أيقونة. أظهر اللوحات التي تحتاجها ورتّبها لتبقى مساحة الرسم واضحة. أنشئ الرمز الذي بدأت به في المحطة الأولى، ولاحظ هل صار الوصول لأدواتك أسهل.</p><p class="exercise-tip">لا يوجد ترتيب واحد يناسب الجميع؛ جرّب تعديلًا واحدًا كل مرة واختر ما يريحك.</p></section>
+            </div>
+            <form class="self-check" data-answer="2" data-success="ممتاز. صارت بيئة العمل جاهزة؛ المحطة التالية تساعدك على توليد فكرة من المراجع." data-next-label="انتقل إلى تمرين توليد الأفكار" data-next="#ideas">
+              <fieldset><legend>تحقّق بنفسك</legend><p class="question">ما الذي يجعل ترتيب مساحة العمل مفيدًا؟</p><div class="answers">
+                <label class="answer-option"><input type="radio" name="workspace-answer" value="0"><span>أن يكون مطابقًا لترتيب جهاز شخص آخر مهما كانت المهمة.</span></label>
+                <label class="answer-option"><input type="radio" name="workspace-answer" value="1"><span>أن يخفي مساحة الرسم كي تظهر كل اللوحات دائمًا.</span></label>
+                <label class="answer-option"><input type="radio" name="workspace-answer" value="2"><span>أن يسهّل الوصول لما أحتاجه ويبقي مساحة الرسم مريحة.</span></label>
+              </div></fieldset>
+              <div class="quiz-actions"><button class="quiz-button" type="submit">تحقّق وتابع</button></div><p class="quiz-feedback" aria-live="polite"></p><a class="next-link" href="#ideas" hidden></a>
+            </form>
+          </div>
+        </article>
+
+        <article class="lesson" id="ideas" data-lesson="ideas" aria-labelledby="ideas-title">
+          <div class="lesson-marker"><span class="lesson-number">٣</span><small>طوّر فكرتك</small></div>
+          <div class="lesson-content">
+            <div class="lesson-meta"><span class="tag">المحطة الثالثة</span><span>نصائح للمبتدئين · ٤:٥٩</span></div>
+            <h3 id="ideas-title">خطوتك الأولى في تعلّم التصميم الجرافيكي</h3>
+            <p class="lesson-goal">هدفك: تستفيد من درس النصائح للمبتدئين، ثم تحوّل المراجع البصرية إلى أكثر من احتمال من صنعك بدل التوقف عند تقليد نموذج واحد.</p>
+            <a class="video-link" href="https://www.youtube.com/watch?v=Q4XBidPGYZo" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="8.2" stroke="currentColor" stroke-width="1.5"/><path d="m8 6.6 5.2 3.4L8 13.4V6.6Z" fill="currentColor"/></svg>شاهد درس نصائح التصميم على YouTube <span aria-hidden="true">↗</span></a>
+            <div class="lesson-divider"></div>
+            <div class="lesson-columns">
+              <section aria-labelledby="ideas-checklist-title"><h4 class="subhead" id="ideas-checklist-title"><span class="mini-icon" aria-hidden="true">✓</span>قائمة صغيرة قبل المتابعة</h4><ul class="checklist" data-checklist="ideas">
+                <li><label><input type="checkbox" data-item="1"><span>أختار موضوعًا واحدًا لملصق أو بطاقة بسيطة.</span></label></li>
+                <li><label><input type="checkbox" data-item="2"><span>أجمع ثلاث مراجع وأكتب ما يلفتني في كل منها.</span></label></li>
+                <li><label><input type="checkbox" data-item="3"><span>أرسم ثلاث محاولات مختلفة قبل اختيار واحدة.</span></label></li>
+              </ul></section>
+              <section aria-labelledby="ideas-exercise-title"><h4 class="subhead" id="ideas-exercise-title"><span class="mini-icon" aria-hidden="true">✳</span>تجربة عملية · ثلاث بدايات</h4><p class="exercise-copy">صمّم ملصقًا لمقهى خيالي. اجمع ثلاث مراجع، وسجّل من كل واحدة ملاحظة مثل لون أو إيقاع أو شكل. ثم ارسم ثلاثة تخطيطات أصلية مختلفة، واختر واحدًا لتطويره في Illustrator.</p>
+                <div class="reference-links" aria-label="منصات وروابط مذكورة في وصف الفيديو"><a href="https://www.behance.net" target="_blank" rel="noopener noreferrer">Behance ↗</a><a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest ↗</a><a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble ↗</a><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google ↗</a></div>
+                <p class="exercise-tip">هذه روابط وردت في وصف الدرس لجمع المراجع؛ استخدمها للإلهام، لا لنسخ تصميم بعينه.</p></section>
+            </div>
+            <form class="self-check" data-answer="1" data-success="أحسنت. صار لديك أكثر من بداية؛ اختر تخطيطًا واحدًا ونفّذه كتجربة أولى." data-next-label="إلى التطبيق العملي الأخير" data-next="#next-practice">
+              <fieldset><legend>تحقّق بنفسك</legend><p class="question">إذا عرفت الأدوات لكن صعبت عليك بداية الفكرة، فما الخطوة العملية الأفضل؟</p><div class="answers">
+                <label class="answer-option"><input type="radio" name="ideas-answer" value="0"><span>أنسخ مرجعًا واحدًا كما هو قبل أن أفهمه.</span></label>
+                <label class="answer-option"><input type="radio" name="ideas-answer" value="1"><span>ألاحظ ما يجذبني في المراجع، ثم أرسم بدائل مختلفة بأسلوبي.</span></label>
+                <label class="answer-option"><input type="radio" name="ideas-answer" value="2"><span>أنتظر أن تخطر لي فكرة كاملة من دون أي تجربة.</span></label>
+              </div></fieldset>
+              <div class="quiz-actions"><button class="quiz-button" type="submit">تحقّق وتابع</button></div><p class="quiz-feedback" aria-live="polite"></p><a class="next-link" href="#next-practice" hidden></a>
+            </form>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="next-practice wrap" id="next-practice" aria-labelledby="next-title">
+      <div><p class="kicker">بعد المحطات الثلاث</p><h2 id="next-title">فكرة صغيرة تكفي لتبدأ</h2><p>اختر أحد تخطيطات الملصق، وافتح Illustrator، وابنِ نسخة أولى بسيطة. قارنها بتخطيطك وعدّل شيئًا واحدًا في كل مرة.</p></div>
+      <a class="button" href="#ideas">راجع تمرين الفكرة ↑</a>
+    </section>
+
+    <aside class="editorial-note wrap" aria-label="ملاحظة عن مصادر المحتوى"><span class="note-icon" aria-hidden="true">i</span><p>ملاحظة عن المحتوى: لم تتوفر مسارات ترجمة نصية للفيديوهات عبر مصدر القراءة. صُمم هذا الرفيق اعتمادًا على العناوين والأوصاف والتعليقات التي أمكن الوصول إليها فقط؛ التمارين وأسئلة التحقق مقترحات تدريبية وليست نقلًا أو تفريغًا لما قيل في الفيديو.</p></aside>
+  </main>
+
+  <footer class="site-footer wrap"><p>رفيق ممارسة مستقل · يتطلب الإنترنت فقط لفتح روابط الفيديو والمراجع.</p><p>تُحفظ علامات التقدم على هذا الجهاز فقط.</p></footer>
+
+  <script>
+    (() => {
+      const storageKey = "practice-loom-illustrator-companion-v1";
+      const lessons = ["intro", "workspace", "ideas"];
+      let state = { checks: {}, complete: {} };
+      try {
+        const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
+        if (saved && typeof saved === "object") state = { checks: saved.checks || {}, complete: saved.complete || {} };
+      } catch (_) { /* Continue without persistence if storage is unavailable. */ }
+      const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) { /* Page remains usable without storage. */ } };
+      const digits = value => String(value).replace(/[0-9]/g, digit => "٠١٢٣٤٥٦٧٨٩"[Number(digit)]);
+      const updateProgress = () => {
+        const count = lessons.filter(id => state.complete[id]).length;
+        document.getElementById("progress-label").textContent = `أنجزت ${digits(count)} من ٣ محطات`;
+        document.getElementById("progress-value").style.width = `${count / lessons.length * 100}%`;
+        const bar = document.getElementById("progress-bar");
+        bar.setAttribute("aria-valuenow", String(count));
+      };
+      document.querySelectorAll(".checklist").forEach(list => {
+        const lessonId = list.dataset.checklist;
+        list.querySelectorAll("input[type=checkbox]").forEach(input => {
+          const itemId = input.dataset.item;
+          input.checked = Boolean(state.checks[lessonId] && state.checks[lessonId][itemId]);
+          input.addEventListener("change", () => { state.checks[lessonId] ||= {}; state.checks[lessonId][itemId] = input.checked; save(); });
+        });
+      });
+      document.querySelectorAll(".self-check").forEach(form => {
+        form.addEventListener("submit", event => {
+          event.preventDefault();
+          const feedback = form.querySelector(".quiz-feedback");
+          const selected = form.querySelector("input[type=radio]:checked");
+          const next = form.querySelector(".next-link");
+          if (!selected) { feedback.className = "quiz-feedback error"; feedback.textContent = "اختر إجابة واحدة أولًا، ثم تحقّق."; next.hidden = true; return; }
+          if (Number(selected.value) !== Number(form.dataset.answer)) { feedback.className = "quiz-feedback error"; feedback.textContent = "ليست هذه الإجابة الأقرب. راجع التجربة العملية وجرّب مرة أخرى."; next.hidden = true; return; }
+          const lessonId = form.closest(".lesson").dataset.lesson;
+          state.complete[lessonId] = true;
+          save(); updateProgress();
+          feedback.className = "quiz-feedback success";
+          feedback.textContent = form.dataset.success;
+          next.href = form.dataset.next;
+          next.textContent = `${form.dataset.nextLabel} ←`;
+          next.hidden = false;
+        });
+      });
+      updateProgress();
+      document.querySelectorAll(".self-check").forEach(form => {
+        const lessonId = form.closest(".lesson").dataset.lesson;
+        if (!state.complete[lessonId]) return;
+        const feedback = form.querySelector(".quiz-feedback");
+        const next = form.querySelector(".next-link");
+        feedback.className = "quiz-feedback success";
+        feedback.textContent = form.dataset.success;
+        next.href = form.dataset.next;
+        next.textContent = `${form.dataset.nextLabel} ←`;
+        next.hidden = false;
+      });
+    })();
+  </script>
+</body>
+</html>
