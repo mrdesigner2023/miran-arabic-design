@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2eee3">
+  <meta name="description" content="تمارين تصميم عربية قصيرة تساعدك على توليد أفكارك بصرياً، لا تقليدها.">
+  <title>مِران — صالة الأفكار</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="challenges.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="مِران — إلى بداية الصفحة">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M8 29 18 9l8 15 6-10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="29" r="3" fill="currentColor"/><circle cx="32" cy="14" r="3" fill="currentColor"/></svg>
+      </span>
+      <span><strong>مِران</strong><small>صالة الأفكار</small></span>
+    </a>
+    <div class="offline-tag"><span class="online-dot" aria-hidden="true"></span> يعمل بلا حساب أو اتصال</div>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-line" aria-hidden="true"></span> تدريب بصري للمصممين</p>
+        <h1 id="page-title">الفكرة مهارةٌ<br><em>تتمرّن عليها.</em></h1>
+        <p class="intro-note">لا تنتظر الإلهام. ابدأ بقيدٍ صغير، جرّب احتمالات، ثم اختر ما يستحق أن يصبح تصميماً.</p>
+      </div>
+      <div class="intro-stamp" aria-hidden="true">
+        <span class="stamp-number">01</span>
+        <span class="stamp-text">من الملاحظة<br>إلى الفكرة</span>
+        <svg viewBox="0 0 74 74" fill="none"><path d="M37 8v58M8 37h58M16.5 16.5l41 41m0-41-41 41" stroke="currentColor" stroke-width="1.4"/><circle cx="37" cy="37" r="15" stroke="currentColor" stroke-width="1.4"/></svg>
+      </div>
+    </section>
+
+    <section class="workbench" aria-label="مولّد تحديات التصميم">
+      <aside class="controls" aria-labelledby="controls-title">
+        <div class="section-cap"><span class="cap-index">A</span><span>جهّز جلستك</span></div>
+        <h2 id="controls-title">اختَر نقطة البداية</h2>
+        <p class="controls-hint">كل مرة تغيّر فيها قيداً، ترى المسألة من زاوية مختلفة.</p>
+
+        <form id="settings-form">
+          <label class="field-label" for="project-type">نوع المشروع</label>
+          <select id="project-type" name="project" aria-label="نوع المشروع">
+            <option value="poster">ملصق</option>
+            <option value="identity">هوية مصغّرة</option>
+            <option value="social">منشور توعوي</option>
+            <option value="cover">غلاف</option>
+            <option value="infographic">إنفوغراف</option>
+            <option value="packaging">تغليف</option>
+            <option value="event">فعالية</option>
+            <option value="editorial">صفحة تحريرية</option>
+          </select>
+
+          <label class="field-label" for="time-limit">الوقت المتاح</label>
+          <select id="time-limit" name="time">
+            <option value="20">20 دقيقة — جولة خاطفة</option>
+            <option value="30" selected>30 دقيقة — جلسة مركّزة</option>
+            <option value="45">45 دقيقة — مساحة للتجريب</option>
+            <option value="60">60 دقيقة — تعمّق أكثر</option>
+          </select>
+
+          <label class="field-label" for="skill-level">مستواك اليوم</label>
+          <select id="skill-level" name="level">
+            <option value="beginner" selected>مبتدئ — فكرة واحدة واضحة</option>
+            <option value="intermediate">متوسط — قارن بين مسارين</option>
+            <option value="advanced">متقدم — ابنِ نظاماً بصرياً</option>
+          </select>
+
+          <label class="field-label" for="visual-constraint">القيد البصري</label>
+          <select id="visual-constraint" name="constraint">
+            <option value="auto" selected>فاجئني بقيد مناسب</option>
+            <option value="mono">لون واحد ودرجاته</option>
+            <option value="no-photo">بلا صور فوتوغرافية</option>
+            <option value="one-shape">شكل هندسي واحد</option>
+            <option value="type-led">الحروف هي الصورة</option>
+            <option value="asymmetry">تكوين غير متمركز</option>
+            <option value="three-colors">ثلاثة ألوان كحد أقصى</option>
+            <option value="whitespace">مساحة فارغة واسعة</option>
+            <option value="grid">شبكة 3 × 3</option>
+            <option value="handmade">أثر مرسوم باليد</option>
+            <option value="collage">قصاصات وكولاج</option>
+          </select>
+
+          <button class="button button-primary generate-button" type="submit">
+            <span>ولّد لي تحدّياً</span><span class="button-arrow" aria-hidden="true">←</span>
+          </button>
+        </form>
+
+        <div class="nudge"><span class="nudge-mark" aria-hidden="true">✳</span><p>لا تبحث عن مرجع الآن. دع القيود تساعدك على اكتشاف مسارك أولاً.</p></div>
+      </aside>
+
+      <article class="challenge" aria-labelledby="challenge-title">
+        <div class="challenge-topline">
+          <div class="section-cap"><span class="cap-index">B</span><span>تحدّيك الحالي</span></div>
+          <span id="challenge-number" class="challenge-number">تمرين 01</span>
+        </div>
+
+        <div class="challenge-meta">
+          <span id="project-chip" class="project-chip">ملصق</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span id="meta-time">30 دقيقة</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span id="meta-level">مبتدئ</span>
+        </div>
+
+        <h2 id="challenge-title" tabindex="-1">ظلّ يدلّ الطريق</h2>
+        <p id="challenge-deck" class="challenge-deck">ابدأ من ملاحظة شكل، لا من البحث عن مرجع.</p>
+
+        <div class="brief-grid">
+          <section class="brief-block audience-block">
+            <h3><span class="field-symbol" aria-hidden="true">◎</span> لمن؟</h3>
+            <p id="brief-audience"></p>
+          </section>
+          <section class="brief-block objective-block">
+            <h3><span class="field-symbol" aria-hidden="true">↗</span> ما الأثر المطلوب؟</h3>
+            <p id="brief-objective"></p>
+          </section>
+          <section class="brief-block required-block">
+            <h3><span class="field-symbol" aria-hidden="true">＋</span> عناصر لا بدّ منها</h3>
+            <ul id="brief-required"></ul>
+          </section>
+          <section class="brief-block constraint-block">
+            <h3><span class="field-symbol" aria-hidden="true">◈</span> قيدك البصري</h3>
+            <p id="brief-constraint"></p>
+          </section>
+          <section class="brief-block cliche-block">
+            <h3><span class="field-symbol" aria-hidden="true">⊘</span> تجنّب هذا المألوف</h3>
+            <p id="brief-cliche"></p>
+          </section>
+          <section class="brief-block scope-block">
+            <h3><span class="field-symbol" aria-hidden="true">↗</span> مهمّة تناسب مستواك</h3>
+            <p id="brief-scope"></p>
+          </section>
+        </div>
+
+        <section class="warmup" aria-labelledby="warmup-heading">
+          <div class="warmup-heading">
+            <span class="warmup-icon" aria-hidden="true">✳</span>
+            <div><p class="warmup-kicker">قبل أن تفتح البرنامج</p><h3 id="warmup-heading">إحماء الفكرة</h3></div>
+            <span id="warmup-time" class="warmup-time">5 دقائق</span>
+          </div>
+          <p id="brief-warmup" class="warmup-copy"></p>
+        </section>
+
+        <section class="route" aria-label="تقسيم وقت التمرين">
+          <div class="route-heading"><h3>قسّم جلستك</h3><span>المسودة الأولى تكفي</span></div>
+          <ol id="time-route" class="time-route"></ol>
+        </section>
+
+        <div class="challenge-actions">
+          <button id="copy-button" class="button button-secondary" type="button"><span class="action-icon" aria-hidden="true">▣</span> انسخ التحدّي</button>
+          <button id="save-button" class="button button-secondary" type="button"><span class="action-icon" aria-hidden="true">＋</span> احفظه عندي</button>
+          <span id="action-status" class="action-status" role="status" aria-live="polite"></span>
+        </div>
+      </article>
+    </section>
+
+    <section id="saved-section" class="saved-section" hidden aria-labelledby="saved-title">
+      <div class="saved-heading"><div><p class="eyebrow">مسوداتك</p><h2 id="saved-title">التحديات المحفوظة</h2></div><span id="saved-count" class="saved-count">0</span></div>
+      <ul id="saved-list" class="saved-list"></ul>
+    </section>
+
+    <footer class="page-footer">
+      <span>مِران <span aria-hidden="true">·</span> مساحة آمنة للتجريب</span>
+      <span>تُحفظ تحدياتك في هذا المتصفح فقط</span>
+    </footer>
+  </main>
+</body>
+</html>
