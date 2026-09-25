@@ -6,6 +6,23 @@
   <meta name="theme-color" content="#f6f2e9">
   <meta name="description" content="رفيق عربي عملي من ثلاث محطات للمبتدئين في Adobe Illustrator: افهم البرنامج، جهّز مساحة العمل، وابدأ بفكرة من صنعك.">
   <title>مسار إليستريتور للمبتدئين — رفيق تدريب عملي</title>
+  <link rel="canonical" href="https://mrdesigner2023.github.io/miran-arabic-design/practice/">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="من الأداة إلى الفكرة">
+  <meta property="og:title" content="رفيق Illustrator — تدريب عملي للمبتدئين">
+  <meta property="og:description" content="ثلاث محطات عربية تساعدك على فهم Illustrator وتجهيز مساحة العمل ثم بدء فكرة من صنعك.">
+  <meta property="og:url" content="https://mrdesigner2023.github.io/miran-arabic-design/practice/">
+  <meta property="og:image" content="https://mrdesigner2023.github.io/miran-arabic-design/share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="رفيق تدريب عربي عملي لتعلّم Illustrator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="رفيق Illustrator — تدريب عملي للمبتدئين">
+  <meta name="twitter:description" content="تعرّف إلى البرنامج، جهّز مساحة العمل، وابدأ أول فكرة تصميم.">
+  <meta name="twitter:image" content="https://mrdesigner2023.github.io/miran-arabic-design/share.png">
+  <meta name="twitter:image:alt" content="رفيق تدريب عربي عملي لتعلّم Illustrator">
   <style>
     :root {
       color-scheme: light;
@@ -22,12 +39,12 @@
     a:focus-visible, button:focus-visible, input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 3px; }
     .wrap { width: min(1120px, calc(100% - 44px)); margin-inline: auto; }
     .site-header { display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 76px; border-bottom: 1px solid var(--line); }
-    .wordmark { display: inline-flex; align-items: center; gap: 11px; text-decoration: none; }
+    .wordmark { display: inline-flex; align-items: center; gap: 11px; min-height: 44px; text-decoration: none; }
     .mark { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50% 50% 50% 12px; background: var(--coral); color: white; font-size: 18px; font-weight: 800; line-height: 1; transform: rotate(-6deg); }
     .wordmark-name { display: block; font-size: 15px; font-weight: 800; line-height: 1.2; }
     .wordmark-sub { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; letter-spacing: .04em; }
     .header-side { display: flex; align-items: center; gap: 22px; color: var(--muted); font-size: 13px; }
-    .header-side a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .header-side a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; text-decoration-thickness: 1px; text-underline-offset: 4px; }
     .hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr); align-items: center; gap: clamp(36px, 7vw, 88px); padding-block: clamp(52px, 8vw, 100px) 58px; }
     .eyebrow, .kicker { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 16px; color: var(--coral-dark); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
     .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--coral); }
@@ -53,7 +70,7 @@
     .start-number { display: grid; place-items: center; width: 43px; height: 43px; border-radius: 50%; background: var(--ink); color: white; font-size: 14px; font-weight: 800; }
     .start-here h2 { margin: 0 0 2px; font-size: 17px; }
     .start-here p { margin: 0; color: var(--muted); font-size: 13px; }
-    .start-here a { color: var(--coral-dark); font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
+    .start-here a { display: inline-flex; align-items: center; min-height: 44px; color: var(--coral-dark); font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
     .section-head { display: grid; grid-template-columns: 1fr minmax(245px, .55fr); align-items: end; gap: 30px; margin-bottom: 27px; }
     .section-head .kicker { margin-bottom: 8px; }
     .section-head h2 { margin-bottom: 0; font-size: clamp(27px, 3.6vw, 41px); line-height: 1.25; letter-spacing: -.03em; }
@@ -74,20 +91,20 @@
     .lesson-meta .tag { color: var(--coral-dark); font-weight: 800; }
     .lesson h3 { margin-bottom: 8px; font-size: clamp(21px, 2.6vw, 29px); line-height: 1.45; letter-spacing: -.025em; }
     .lesson-goal { max-width: 750px; margin-bottom: 17px; color: var(--muted); }
-    .video-link { display: inline-flex; align-items: center; gap: 9px; color: var(--coral-dark); font-size: 14px; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .video-link { display: inline-flex; align-items: center; gap: 9px; min-height: 44px; color: var(--coral-dark); font-size: 14px; font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 4px; }
     .video-link svg { width: 18px; height: 18px; flex: none; }
     .lesson-divider { height: 1px; margin-block: 22px; background: var(--line); }
     .lesson-columns { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(22px, 5vw, 54px); }
     .subhead { display: flex; align-items: center; gap: 9px; margin: 0 0 10px; font-size: 14px; font-weight: 800; }
     .subhead .mini-icon { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 7px; background: var(--paper-deep); color: var(--blue); font-size: 13px; }
     .checklist { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
-    .checklist label { display: flex; align-items: flex-start; gap: 9px; cursor: pointer; font-size: 13px; line-height: 1.6; }
+    .checklist label { display: flex; align-items: flex-start; gap: 9px; min-height: 44px; padding-block: 7px; cursor: pointer; font-size: 13px; line-height: 1.6; }
     .checklist input { width: 17px; height: 17px; flex: none; margin: 3px 0 0; accent-color: var(--coral); }
     .checklist input:checked + span { color: var(--muted); text-decoration: line-through; text-decoration-thickness: 1px; }
     .exercise-copy { margin: 0; font-size: 14px; }
     .exercise-tip { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
     .reference-links { display: flex; flex-wrap: wrap; gap: 7px 13px; margin-top: 12px; }
-    .reference-links a { color: var(--blue); font-size: 12px; font-weight: 750; text-underline-offset: 3px; }
+    .reference-links a { display: inline-flex; align-items: center; min-height: 44px; padding-inline: 2px; color: var(--blue); font-size: 12px; font-weight: 750; text-underline-offset: 3px; }
     .self-check { margin-top: 25px; padding-top: 19px; border-top: 1px dashed var(--line); }
     .self-check legend { padding: 0 0 7px; font-size: 14px; font-weight: 800; }
     .question { margin: 0 0 11px; font-size: 13px; }
@@ -95,12 +112,12 @@
     .answer-option { display: flex; align-items: flex-start; gap: 9px; cursor: pointer; font-size: 13px; line-height: 1.55; }
     .answer-option input { width: 16px; height: 16px; flex: none; margin: 4px 0 0; accent-color: var(--coral); }
     .quiz-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 14px; }
-    .quiz-button { min-height: 40px; padding: 7px 16px; border: 0; border-radius: 999px; background: var(--ink); color: white; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
+    .quiz-button { min-height: 44px; padding: 7px 16px; border: 0; border-radius: 999px; background: var(--ink); color: white; font: inherit; font-size: 12px; font-weight: 800; cursor: pointer; }
     .quiz-button:hover { background: var(--blue); }
     .quiz-feedback { min-height: 1.7em; margin: 10px 0 0; color: var(--muted); font-size: 13px; }
     .quiz-feedback.success { color: #275e3a; font-weight: 750; }
     .quiz-feedback.error { color: var(--coral-dark); }
-    .next-link { display: inline-flex; align-items: center; gap: 7px; color: var(--coral-dark); font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
+    .next-link { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; color: var(--coral-dark); font-size: 13px; font-weight: 800; text-underline-offset: 4px; }
     [hidden] { display: none !important; }
     .next-practice { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 24px; margin-block: 54px 60px; padding: 28px clamp(20px, 4vw, 38px); border-radius: var(--radius); background: var(--ink); color: white; }
     .next-practice .kicker { margin-bottom: 7px; color: #f0ac8e; }
@@ -308,7 +325,7 @@
         const saved = JSON.parse(localStorage.getItem(storageKey) || "null");
         if (saved && typeof saved === "object") state = { checks: saved.checks || {}, complete: saved.complete || {} };
       } catch (_) { /* Continue without persistence if storage is unavailable. */ }
-      const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) { /* Page remains usable without storage. */ } };
+      const save = () => { try { localStorage.setItem(storageKey, JSON.stringify(state)); } catch (_) { /* Page remains usable without persistence. */ } };
       const digits = value => String(value).replace(/[0-9]/g, digit => "٠١٢٣٤٥٦٧٨٩"[Number(digit)]);
       const updateProgress = () => {
         const count = lessons.filter(id => state.complete[id]).length;
